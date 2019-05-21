@@ -19,47 +19,65 @@
  		</div>
  	</div>
  	
-
- 	<!--  Book collection/ list of books -->
- 
+	<!--  Book collection/ list of books -->
 	<div class="grid-container " >
-		<div class="grid-x grid-margin-x grid-padding-y" id="books">
-			<div class="large-2 medium-2  cell ">
-				<button type="button" id="testBtn"> Test button </button>
-			</div>
-			<div class="large-8 medium-8 callout cell " >
-					<h5> Add a new book</h5>
-				  <form  id="addBookForm"  class="text-center">
-			            <div class="floated-label-wrapper">
-			              <label for="title">Title</label>
-			              <input type="text" id="title" name="title input" placeholder="Enter book title " required>
-			            
-			              <label for="author">Author</label>
-			              <input type="text" id="author" name="author input" placeholder="Enter the name of the author">
-			              <label for="release-date">Release Date</label>
-			              <input type="text" id="release-date" placeholder="Release date " name="release-date" required >
-						
-			              <label for="keywords">Keywords</label>
-	   		              <textarea id="keywords" name="keywords" placeholder=" What would i Google to find this book? "> </textarea> 
-			            </div>
-						<button type="button" id="testBtn2"> Hello World!!! </button>
-       				    <input id="addBook" class="button " type="submit" value="Add Book">
-		          </form>
-			
-			</div>
-			<div id="myDiv" class="large-2 medium-2  cell ">
-				<button type="button" id="myDivBtn"> myDivBtn !!! </button>
-			</div> 
-			
-			
-		</div>
+		<div class="grid-x grid-margin-x grid-padding-y" id="books"></div>
 	</div>
+ 	
+    <!--  Form for creating a new PO -->    		
+ 	<div class="grid-container " >
+		<div class="grid-x grid-margin-x grid-padding-y" > 
+			<div class="large-2 medium-2  cell ">
+			</div>
+			<div class="large-8 medium-8  cell " id="addPO">
+			</div>
+			<div class="large-2 medium-2  cell ">
+			</div>
+		</div>
+	</div>  <!-- End -- Add new purchse order. -->
+
+
 	
     <!--  Form for adding a new book to our library's collection  -->    		
- 	<div class="grid-container ">
-		<div class="grid-x grid-margin-x grid-padding-y">
+ 	<div class="grid-container " >
+		<div class="grid-x grid-margin-x grid-padding-y" > 
+			<div class="large-2 medium-2  cell ">
+			</div>
+			<div class="large-8 medium-8  cell " id="addBook">
+			    
+			</div>
+			
+			<div class="large-2 medium-2  cell ">
+			</div>
+			
 		</div>
-	</div>  <!-- End -- Add new book.-->
+	</div>  <!-- End -- Add new book. -->
+
+
+		<script id="addPOTemplate" type="text/template">
+					<div class="large-2 medium-2  cell ">
+					</div>
+					<div class="large-8 medium-8 callout cell " >
+						<h5> Enter a new purchase order </h5>
+				  		<form  id="addPOForm"  class="text-center">
+			            	<div class="floated-label-wrapper">
+				              		<label for="username">Username </label>
+				              		<input type="text" id="username" name="username input" placeholder="Enter your name " required>
+					              <label for="userEmail">Author</label>
+					              <input type="text" id="userEmail " name="userEmail input" placeholder="Enter your email">
+					              <label for="cost">Cost </label>
+					              <input type="text" id="cost " placeholder="Cost " name="release-date" required >
+					              <label for="reason">Reason </label>
+			   		              <textarea id="reason" name="reason" placeholder=" Why ? "> </textarea> 
+				            </div>
+	       				    <input id="addPO" class="button " type="submit" value="Enter purchase order">
+				        </form>
+					</div>
+	 				<div id="myDiv" class="large-2 medium-2  cell ">
+					</div> 
+ 		</script>
+
+
 			
 		<script id="bookTemplate" type="text/template">
     			<img src="<%= coverImage %>"/>
@@ -77,8 +95,11 @@
         <script src="js/lib/backbone-min.js"></script>
         <script src="js/models/book.js"></script>
         <script src="js/collections/library.js"></script>
-        <script src="js/views/book.js"></script>
+         <script src="js/views/book.js"></script>
         <script src="js/views/library.js"></script>
+<!--         <script src="js/views/addBook.js"></script>
+ -->   
+ 	    <script src="js/views/addPO.js"></script>
         <script src="js/app.js"></script>
        
     </body>
